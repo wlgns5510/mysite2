@@ -8,24 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class WebUtil {
-	
-	//필드
-	
-	
-	//생성자
-	
-	
-	//메소드-gs
-	
-	
-	//메소드-일반
-	public static void forward(HttpServletRequest request, HttpServletResponse response, String path) throws ServletException, IOException {
+
+	public static void forword(HttpServletRequest request, 
+			            HttpServletResponse response, String path) throws ServletException, IOException {
+		
 		RequestDispatcher rd = request.getRequestDispatcher(path);
 		rd.forward(request, response);
 	}
 	
-	public static void redirect(HttpServletRequest request, HttpServletResponse response, String url) throws IOException {
+	public static void redirect(HttpServletRequest request, 
+                                HttpServletResponse response, String url) throws IOException {
 		response.sendRedirect(url);
+		
 	}
-
+	
 }

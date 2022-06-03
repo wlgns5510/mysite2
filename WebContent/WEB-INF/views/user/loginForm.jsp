@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@ page import="com.javaex.vo.UserVo" %>
 
 <%
-	UserVo authUser = (UserVo)session.getAttribute("authUser");
-	System.out.println(authUser);
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		System.out.println(authUser);
 %>
 
 <!DOCTYPE html>
@@ -24,19 +23,17 @@
 				<a href="/mysite2/main">MySite</a>
 			</h1>
 
-			<%if(authUser == null){%> <!--로그인 실패, 로그인 전--> 
+			<%if(authUser == null){%>   <!-- 로그인 실패, 로그인전 -->
 				<ul>
 					<li><a href="/mysite2/user?action=loginForm" class="btn_s">로그인</a></li>
 					<li><a href="/mysite2/user?action=joinForm" class="btn_s">회원가입</a></li>
 				</ul>
-			<%}
-			  else {%> <!--//로그인 성공-->
+			<%}else {%> <!-- 로그인 성공 -->
 				<ul>
-					<li><%=authUser.getName() %>님 안녕하세요^^</li>
+					<li><%=authUser.getName() %> 님 안녕하세요^^</li>
 					<li><a href="/mysite2/user?action=logout" class="btn_s">로그아웃</a></li>
 					<li><a href="/mysite2/user?action=modifyForm" class="btn_s">회원정보수정</a></li>
 				</ul>
-				
 			<%}%>
 			
 		</div>
@@ -47,7 +44,7 @@
 				<li><a href="">입사지원서</a></li>
 				<li><a href="">게시판</a></li>
 				<li><a href="">갤러리</a></li>
-				<li><a href="">방명록</a></li>
+				<li><a href="/mysite2/user?action=addList">방명록</a></li>
 			</ul>
 		</div>
 		<!-- //nav -->
@@ -81,8 +78,8 @@
 				<div id="user">
 					<div id="loginForm">
 						<form action="/mysite2/user" method="get">
-						<input type="hidden" name="action" value="login">
-	
+							<input type="text" name="action" value="login">
+							
 							<!-- 아이디 -->
 							<div class="form-group">
 								<label class="form-text" for="input-uid">아이디</label> 
