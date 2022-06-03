@@ -35,7 +35,7 @@
 				<ul>
 					<li><%=authUser.getName() %>님 안녕하세요^^</li>
 					<li><a href="/mysite2/user?action=logout" class="btn_s">로그아웃</a></li>
-					<li><a href="" class="btn_s">회원정보수정</a></li>
+					<li><a href="/mysite2/user?action=modifyForm" class="btn_s">회원정보수정</a></li>
 				</ul>
 				
 			<%}%>
@@ -110,7 +110,7 @@
                         <input type="radio" id="rdo-male" name="gender" value="male" > 
                         
                         <label for="rdo-female">여</label> 
-                        <input type="radio" id="rdo-female" name="gender" value=""female > 
+                        <input type="radio" id="rdo-female" name="gender" value="female" > 
    
                      </div>
    
