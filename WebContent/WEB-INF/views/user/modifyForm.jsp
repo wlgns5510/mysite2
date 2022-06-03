@@ -22,7 +22,7 @@
 
 		<div id="header" class="clearfix">
 			<h1>
-				<a href="">MySite</a>
+				<a href="/mysite2/main">MySite</a>
 			</h1>
 
 			<%if(authUser == null){%> <!--로그인 실패, 로그인 전--> 
@@ -81,7 +81,8 @@
 	
 				<div id="user">
 					<div id="modifyForm">
-						<form action="modify" method="get">
+						<form action="/mysite2/user" method="get">
+						<input type="hidden" name="action" value="modify">
 	
 							<!-- 아이디 -->
 							<div class="form-group">
