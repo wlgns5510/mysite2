@@ -47,8 +47,8 @@ public class GuestbookController extends HttpServlet {
 			WebUtil.redirect(request, response, "/mysite2/gbc?action=addList");			
 		}
 		
-		else if("deleteform".equals(action)) { //action이 deleteform일때
-			//WEB-INF파일안에 바로 들어갈수 없기 때문에 forword를 통해 접근
+		else if("deleteform".equals(action)) { //action이 deleteform일때 
+			//WEB-INF파일안에 바로 들어갈수 없기 때문에 forword를 통해 접근함.
 			System.out.println("GusetBookController>deleteform");
 			WebUtil.forword(request, response, "/WEB-INF/views/guestbook/deleteForm.jsp");
 		}
