@@ -23,7 +23,7 @@
 
 		<div id="header" class="clearfix">
 			<h1>
-				<a href="">MySite</a>
+				<a href="/mysite2/main">MySite</a>
 			</h1>
 
 			<%if(authUser == null){%>   <!-- 로그인 실패, 로그인전 -->
@@ -47,7 +47,7 @@
 				<li><a href="">입사지원서</a></li>
 				<li><a href="">게시판</a></li>
 				<li><a href="">갤러리</a></li>
-				<li><a href="/mysite2/user?action=addList">방명록</a></li>
+				<li><a href="/mysite2/gbc?action=addList">방명록</a></li>
 			</ul>
 		</div>
 		<!-- //nav -->
