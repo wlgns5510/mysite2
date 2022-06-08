@@ -103,7 +103,7 @@ public class BoardDao {
 		
 		//값 넣기 메소드
 		public int insert(BoardVo vo) {
-			int count = 0;
+			int count = -1;
 
 			this.getConnection();
 

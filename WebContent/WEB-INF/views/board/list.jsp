@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="com.javaex.vo.BoardVo" %>
-<%@ page import="java.util.List" %>
 
-<%	
-		List<BoardVo> BoardList = (List<BoardVo>)request.getAttribute("BoardList");
-%>
+
 
 <!DOCTYPE html>
 <html>
@@ -84,13 +80,15 @@
 								<c:forEach items = "${gList}" var = "BoardVo">
 									<tr>
 										<td>${BoardVo.no}</td>
-										<td class="text-left"><a href="/mysite2/bdc?action=read">${BoardVo.title}</a></td>
+										<td class="text-left"><a href="/mysite2/bdc?action=read&no=${boardVo.no }">${BoardVo.title}</a></td>
 										<td>${BoardVo.name}</td>
 										<td>${BoardVo.hit}</td>
 										<td>${BoardVo.date}</td>
-										<c:if test="${authUser.no eq boardVo.user_no }">
-											<td><a href="/mysite2/board?action=delete&no=${boardVo.no }">[삭제]</a></td>
-										</c:if>
+										<td>
+											<c:if test="${authUser.no == boardVo.userNo }">
+												<a href="/mysite2/board?action=delete&no=${boardVo.no }">[삭제]</a>
+											</c:if>
+										</td>
 									</tr>
 								</c:forEach>															
 							</tbody>

@@ -1,7 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<%@ page import="com.javaex.vo.UserVo" %>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -57,12 +54,14 @@
 				<!-- //content-head -->
 	
 				<div id="board">
-					<div id="writeForm">
+					<div id="writeForm">						
 						<form action="#" method="get">
+							<input type="hidden" name="action" value="add">
+							<input type="hidden" name="userNo" value="${authUser.no}">
 							<!-- 제목 -->
 							<div class="form-group">				
 								<label class="form-text" for="txt-title">제목</label>
-								<input type="text" id="txt-title" name="title" value="" placeholder="제목을 입력해 주세요">
+								<input type="text" id="txt-title" name="title" placeholder="제목을 입력해 주세요">
 							</div>
 						
 							<!-- 내용 -->
@@ -72,7 +71,7 @@
 							
 							<a id="btn_cancel" href="/mysite2/bdc?action=list">취소</a>
 							<button id="btn_add" type="submit" >등록</button>
-							<input type="text" name="action" value="add">
+							
 						</form>
 						<!-- //form -->
 					</div>

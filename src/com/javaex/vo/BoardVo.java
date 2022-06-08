@@ -39,6 +39,12 @@ public class BoardVo {
 	}
 
 	
+	public BoardVo(String title, String content, int no) {
+		this.title = title;
+		this.content = content;
+		this.no = no;
+	}
+
 	public int getNo() {
 		return no;
 	}

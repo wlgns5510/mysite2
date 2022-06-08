@@ -63,10 +63,32 @@ public class BoardController extends HttpServlet {
 			WebUtil.forword(request, response, "./WEB-INF/views/board/writeForm.jsp");
 		}
 		else if("add".equals(action)) {
+			System.out.println("BoardController>add");
+			
+			//세션의 no값 가져오기
+			HttpSession session = request.getSession();
+			UserVo authUser = (UserVo)session.getAttribute("authUser");
+			int no = authUser.getNo();
+			
+			//파라미터 꺼내기
 			String title = request.getParameter("title");
 			String content = request.getParameter("content");
-			String userNo = request.getParameter("userNo");
 			
+			//vo만들기
+			BoardVo boardVo = new BoardVo();
+			boardVo.setUserNo(no);
+			boardVo.setTitle(title);
+			boardVo.setContent(content);
+			
+			//Dao를 이용해서 저장하기
+			BoardDao dao = new BoardDao();
+			dao.insert(boardVo);
+			System.out.println(boardVo);
+			
+			
+	
+			//다시 bdc로 돌아감
+			WebUtil.redirect(request, response, "/mysite2/bdc?action=list");
 			
 		}
 		else if("read".equals(action)) {
