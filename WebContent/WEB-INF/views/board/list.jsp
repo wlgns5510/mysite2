@@ -21,7 +21,7 @@
 			<c:import url="/WEB-INF/views/includes/header.jsp"></c:import>
 		<!-- //header -->
 		
-		<!-- nav -->
+		<<!-- nav -->
 		<c:import url="/WEB-INF/views/includes/nav.jsp"></c:import>
 		<!-- //nav -->
 
