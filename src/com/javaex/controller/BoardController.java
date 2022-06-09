@@ -103,6 +103,13 @@ public class BoardController extends HttpServlet {
 			
 			WebUtil.forword(request, response, "/WEB-INF/views/board/read.jsp");
 		}
+		else if("delete".equals(action)) {
+			System.out.println("boardController->delete");
+		}
+		else if("modifyForm".equals(action)) {
+			System.out.println("boardController->modifyForm");
+			WebUtil.forword(request, response, "/WEB-INF/views/board/modifyForm.jsp");
+		}
 	}
 
 	//post형식
