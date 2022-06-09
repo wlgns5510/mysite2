@@ -94,6 +94,13 @@ public class BoardController extends HttpServlet {
 		else if("read".equals(action)) {
 			System.out.println("boardController->read");
 			
+			int no = Integer.parseInt(request.getParameter("no"));
+			
+			BoardDao boardDao = new BoardDao();
+			BoardVo boardVo = boardDao.readBoard(no);
+			
+			request.setAttribute("boardVo", boardVo);
+			
 			WebUtil.forword(request, response, "/WEB-INF/views/board/read.jsp");
 		}
 	}
